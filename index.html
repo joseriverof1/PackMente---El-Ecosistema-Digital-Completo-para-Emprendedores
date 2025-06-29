@@ -1,289 +1,422 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PACKMENTE - Transforma tu Futuro y Conquista el Mundo Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .gradient-bg {
-            background: linear-gradient(120deg, #1e3a8a, #3b82f6);
-        }
-        .cta-button {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .feature-card:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACKMENTE - Transforma tu Futuro y Conquista el Mundo Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(120deg, #1e3a8a, #3b82f6);
+        }
+        .cta-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 0;
+        }
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 1rem;
+            color: #6b7280;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        /* Mejoras de responsive */
+        @media (max-width: 768px) {
+            .text-4xl {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            .text-6xl {
+                font-size: 3rem;
+            }
+            .py-20 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Hero Section -->
-    <header class="gradient-bg text-white text-center py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Deja de Soñar con la Libertad Financiera y Empieza a Construirla Hoy Mismo</h1>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Yo también estuve ahí: atrapado en un trabajo sin futuro, viendo cómo mis sueños se desvanecían. Descubrí el poder del emprendimiento digital y mi vida cambió para siempre. Ahora, quiero compartirte el mapa exacto que me llevó de cero a crear un negocio online de 6 cifras. Ese mapa es PACKMENTE.</p>
-            <a href="#precio" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full text-xl inline-block">
-                ¡QUIERO TRANSFORMAR MI VIDA AHORA! 🚀
-            </a>
-            <p class="mt-4 text-sm opacity-80">Acceso inmediato y de por vida. ¡Invierte una vez, gana para siempre!</p>
-        </div>
-    </header>
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white text-center py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">Deja de Soñar con la Libertad Financiera y Empieza a Construirla Hoy Mismo</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Yo también estuve ahí: atrapado en un trabajo sin futuro, viendo cómo mis sueños se desvanecían. Descubrí el poder del emprendimiento digital y mi vida cambió para siempre. Ahora, quiero compartirte el mapa exacto que me llevó de cero a crear un negocio online de 6 cifras. Ese mapa es PACKMENTE.</p>
+            <a href="#precio" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full text-xl">
+                ¡QUIERO TRANSFORMAR MI VIDA AHORA! 🚀
+            </a>
+            <p class="mt-4 text-sm opacity-80">Acceso inmediato y de por vida. ¡Invierte una vez, gana para siempre!</p>
+        </div>
+    </header>
 
-    <main>
-        <!-- As Seen On / Social Proof -->
-        <section class="bg-white py-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Únete a una comunidad de emprendedores exitosos</h3>
-                <div class="flex justify-center items-center space-x-8 mt-4">
-                     <p class="text-2xl font-bold text-blue-600">+10,000</p>
-                     <p class="text-gray-600">Estudiantes Satisfechos</p>
-                     <p class="text-2xl font-bold text-blue-600">4.9/5</p>
-                     <p class="text-gray-600">Valoración Media</p>
-                </div>
-            </div>
-        </section>
+    <main>
+        <!-- Social Proof Section -->
+        <section class="bg-white py-8">
+            <div class="max-w-4xl mx-auto text-center px-4">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Únete a una comunidad de emprendedores exitosos</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <p class="text-2xl font-bold text-blue-600">+10,000</p>
+                        <p class="text-gray-600">Estudiantes Satisfechos</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <p class="text-2xl font-bold text-blue-600">4.9/5</p>
+                        <p class="text-gray-600">Valoración Media</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- What You'll Get Section -->
-        <section class="py-20 px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900">Tu Arsenal Completo para el Éxito Digital</h2>
-                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Con PACKMENTE no solo aprendes, sino que obtienes todo lo que necesitas para empezar a vender desde el primer día.</p>
-                </div>
+        <!-- What You'll Get Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Tu Arsenal Completo para el Éxito Digital</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Con PACKMENTE no solo aprendes, sino que obtienes todo lo que necesitas para empezar a vender desde el primer día.</p>
+                </div>
 
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <!-- Card 1: Cursos -->
-                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                        <div class="text-5xl mb-4">🚀</div>
-                        <h3 class="text-2xl font-bold mb-2">Más de 50 Cursos Especializados</h3>
-                        <p class="text-gray-600">Desde Negocios Digitales y Marketing hasta IA y Mentalidad Millonaria. Domina cada área clave.</p>
-                    </div>
-                    <!-- Card 2: Productos -->
-                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                        <div class="text-5xl mb-4">💰</div>
-                        <h3 class="text-2xl font-bold mb-2">Productos Listos para Vender</h3>
-                        <p class="text-gray-600">+20,000 Ebooks con licencia PLR, páginas de venta, videos virales y más para que generes el 100% de ganancias.</p>
-                    </div>
-                    <!-- Card 3: Herramientas -->
-                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                        <div class="text-5xl mb-4">🛠️</div>
-                        <h3 class="text-2xl font-bold mb-2">Herramientas Premium Incluidas</h3>
-                        <p class="text-gray-600">Acceso a Canva PRO, CRM, automatizadores y más. Ahorra miles de dólares en suscripciones.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Card 1: Cursos -->
+                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-4">🚀</div>
+                        <h3 class="text-2xl font-bold mb-2">Más de 50 Cursos Especializados</h3>
+                        <p class="text-gray-600">Desde Negocios Digitales y Marketing hasta IA y Mentalidad Millonaria. Domina cada área clave.</p>
+                    </div>
+                    <!-- Card 2: Productos -->
+                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-4">💰</div>
+                        <h3 class="text-2xl font-bold mb-2">Productos Listos para Vender</h3>
+                        <p class="text-gray-600">+20,000 Ebooks con licencia PLR, páginas de venta, videos virales y más para que generes el 100% de ganancias.</p>
+                    </div>
+                    <!-- Card 3: Herramientas -->
+                    <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="text-5xl mb-4">🛠️</div>
+                        <h3 class="text-2xl font-bold mb-2">Herramientas Premium Incluidas</h3>
+                        <p class="text-gray-600">Acceso a Canva PRO, CRM, automatizadores y más. Ahorra miles de dólares en suscripciones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Course Content Section -->
-        <section class="bg-gray-100 py-20 px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900">¿Qué Aprenderás a Dominar?</h2>
-                    <p class="text-lg text-gray-600 mt-4">Un vistazo a tu ruta de aprendizaje para convertirte en un experto.</p>
-                </div>
+        <!-- Course Content Section -->
+        <section class="bg-gray-100 py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">¿Qué Aprenderás a Dominar?</h2>
+                    <p class="text-lg text-gray-600 mt-4">Un vistazo a tu ruta de aprendizaje para convertirte en un experto.</p>
+                </div>
 
-                <div class="space-y-6">
-                    <!-- Module -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
-                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl">1</div>
-                        <div>
-                            <h3 class="text-xl font-bold">Negocios Digitales de la A a la Z</h3>
-                            <p class="text-gray-600 mt-1">Desde encontrar tu nicho rentable y crear tu marca, hasta estrategias avanzadas de monetización y escalado.</p>
-                        </div>
-                    </div>
-                    <!-- Module -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
-                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl">2</div>
-                        <div>
-                            <h3 class="text-xl font-bold">Marketing Digital que Vende</h3>
-                            <p class="text-gray-600 mt-1">Domina SEO, Meta Ads, Email Marketing, Funnels de Venta y automatizaciones para atraer un flujo constante de clientes.</p>
-                        </div>
-                    </div>
-                    <!-- Module -->
-                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
-                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl">3</div>
-                        <div>
-                            <h3 class="text-xl font-bold">Inteligencia Artificial para Emprendedores</h3>
-                            <p class="text-gray-600 mt-1">Aprende a usar ChatGPT y otras herramientas de IA para automatizar tareas, crear contenido y optimizar tu negocio.</p>
-                        </div>
-                    </div>
-                    <!-- Module -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
-                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl">4</div>
-                        <div>
-                            <h3 class="text-xl font-bold">Conquista las Redes Sociales</h3>
-                            <p class="text-gray-600 mt-1">Estrategias probadas para crecer y vender en Instagram, TikTok, Facebook, Pinterest y más.</p>
-                        </div>
-                    </div>
-                     <!-- Module -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
-                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl">5</div>
-                        <div>
-                            <h3 class="text-xl font-bold">Mentalidad Millonaria y Psicología del Éxito</h3>
-                            <p class="text-gray-600 mt-1">Desarrolla la mentalidad inquebrantable que necesitas para superar obstáculos y alcanzar el éxito masivo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="space-y-6">
+                    <!-- Module -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
+                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Negocios Digitales de la A a la Z</h3>
+                            <p class="text-gray-600 mt-1">Desde encontrar tu nicho rentable y crear tu marca, hasta estrategias avanzadas de monetización y escalado.</p>
+                        </div>
+                    </div>
+                    <!-- Module -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
+                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Marketing Digital que Vende</h3>
+                            <p class="text-gray-600 mt-1">Domina SEO, Meta Ads, Email Marketing, Funnels de Venta y automatizaciones para atraer un flujo constante de clientes.</p>
+                        </div>
+                    </div>
+                    <!-- Module -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
+                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Inteligencia Artificial para Emprendedores</h3>
+                            <p class="text-gray-600 mt-1">Aprende a usar ChatGPT y otras herramientas de IA para automatizar tareas, crear contenido y optimizar tu negocio.</p>
+                        </div>
+                    </div>
+                    <!-- Module -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
+                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Conquista las Redes Sociales</h3>
+                            <p class="text-gray-600 mt-1">Estrategias probadas para crecer y vender en Instagram, TikTok, Facebook, Pinterest y más.</p>
+                        </div>
+                    </div>
+                    <!-- Module -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-6">
+                        <div class="bg-blue-100 text-blue-600 font-bold rounded-full h-12 w-12 flex items-center justify-center text-xl flex-shrink-0">5</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Mentalidad Millonaria y Psicología del Éxito</h3>
+                            <p class="text-gray-600 mt-1">Desarrolla la mentalidad inquebrantable que necesitas para superar obstáculos y alcanzar el éxito masivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Unique Benefits Section -->
-        <section class="py-20 px-4">
-            <div class="max-w-5xl mx-auto">
-                 <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900">Beneficios que no Encontrarás en Ningún Otro Lugar</h2>
-                     <p class="text-lg text-gray-600 mt-4">Esto es más que un curso, es tu pasaporte a una nueva vida.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-green-500 text-3xl">✅</div>
-                        <div>
-                            <h4 class="font-bold text-lg">Acceso de por vida</h4>
-                            <p class="text-gray-600">Un único pago. Sin mensualidades ni renovaciones. Todo el contenido es tuyo para siempre.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                         <div class="text-green-500 text-3xl">✅</div>
-                        <div>
-                            <h4 class="font-bold text-lg">Derecho de Reventa</h4>
-                            <p class="text-gray-600">Recupera tu inversión (y empieza a ganar) con una sola venta del pack. Te enseñamos cómo hacerlo.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="text-green-500 text-3xl">✅</div>
-                        <div>
-                            <h4 class="font-bold text-lg">Mentorías en Vivo</h4>
-                            <p class="text-gray-600">Aprende directamente de expertos en sesiones grupales donde podrás resolver todas tus dudas.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="text-green-500 text-3xl">✅</div>
-                        <div>
-                            <h4 class="font-bold text-lg">Comunidad VIP Exclusiva</h4>
-                            <p class="text-gray-600">Haz networking con otros emprendedores exitosos. Las colaboraciones que nacen aquí no tienen precio.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <div class="text-green-500 text-3xl">✅</div>
-                        <div>
-                            <h4 class="font-bold text-lg">Soporte 24/7</h4>
-                            <p class="text-gray-600">Nunca estarás solo. Nuestro equipo de soporte está listo para ayudarte en cada paso de tu camino.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Unique Benefits Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Beneficios que no Encontrarás en Ningún Otro Lugar</h2>
+                    <p class="text-lg text-gray-600 mt-4">Esto es más que un curso, es tu pasaporte a una nueva vida.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-green-500 text-3xl flex-shrink-0">✅</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Acceso de por vida</h4>
+                            <p class="text-gray-600">Un único pago. Sin mensualidades ni renovaciones. Todo el contenido es tuyo para siempre.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-green-500 text-3xl flex-shrink-0">✅</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Derecho de Reventa</h4>
+                            <p class="text-gray-600">Recupera tu inversión (y empieza a ganar) con una sola venta del pack. Te enseñamos cómo hacerlo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-green-500 text-3xl flex-shrink-0">✅</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Mentorías en Vivo</h4>
+                            <p class="text-gray-600">Aprende directamente de expertos en sesiones grupales donde podrás resolver todas tus dudas.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-green-500 text-3xl flex-shrink-0">✅</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Comunidad VIP Exclusiva</h4>
+                            <p class="text-gray-600">Haz networking con otros emprendedores exitosos. Las colaboraciones que nacen aquí no tienen precio.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-green-500 text-3xl flex-shrink-0">✅</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Soporte 24/7</h4>
+                            <p class="text-gray-600">Nunca estarás solo. Nuestro equipo de soporte está listo para ayudarte en cada paso de tu camino.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Testimonials Section -->
-        <section class="gradient-bg text-white py-20 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold mb-10">Lo que Dicen Nuestros Estudiantes</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white/20 p-6 rounded-lg text-left">
-                        <p class="mb-4">"Estaba perdida, no sabía por dónde empezar. PACKMENTE me dio el mapa y las herramientas. En 3 meses, dejé mi trabajo y ahora vivo 100% de mi negocio online. ¡La mejor inversión de mi vida!"</p>
-                        <div class="flex items-center">
-                            <img src="https://placehold.co/50x50/e2e8f0/333?text=LV" alt="Testimonio de Laura V." class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="font-bold">Laura Vega</p>
-                                <p class="text-sm opacity-80">Diseñadora y Emprendedora</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white/20 p-6 rounded-lg text-left">
-                        <p class="mb-4">"Como profesional, quería diversificar mis ingresos. Con el derecho de reventa recuperé la inversión en una semana. Y lo que aprendí sobre marketing me ha ayudado a conseguir más clientes en mi sector."</p>
-                        <div class="flex items-center">
-                            <img src="https://placehold.co/50x50/e2e8f0/333?text=CM" alt="Testimonio de Carlos M." class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="font-bold">Carlos Mendoza</p>
-                                <p class="text-sm opacity-80">Consultor Financiero</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-         <!-- For Whom Section -->
-        <section class="py-20 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold text-gray-900">¿Es PACKMENTE para Ti?</h2>
-                 <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Si te identificas con alguna de estas situaciones, la respuesta es un rotundo SÍ.</p>
-                 <div class="mt-8 text-left grid sm:grid-cols-2 gap-6">
-                    <div class="flex items-center"><span class="text-blue-500 mr-3 text-2xl">✓</span><p><strong>Emprendedores ambiciosos</strong> que quieren lanzar o escalar su negocio digital.</p></div>
-                    <div class="flex items-center"><span class="text-blue-500 mr-3 text-2xl">✓</span><p><strong>Profesionales</strong> que buscan una fuente de ingresos extra sólida y escalable.</p></div>
-                    <div class="flex items-center"><span class="text-blue-500 mr-3 text-2xl">✓</span><p><strong>Estudiantes</strong> que quieren aprender habilidades del futuro que no se enseñan en la universidad.</p></div>
-                    <div class="flex items-center"><span class="text-blue-500 mr-3 text-2xl">✓</span><p>Cualquier persona <strong>decidida a crear su libertad financiera</strong> en el mundo digital.</p></div>
-                 </div>
-            </div>
-        </section>
+        <!-- Testimonials Section -->
+        <section class="gradient-bg text-white py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-10">Lo que Dicen Nuestros Estudiantes</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white/20 p-6 rounded-lg text-left backdrop-blur-sm">
+                        <p class="mb-4">"Estaba perdida, no sabía por dónde empezar. PACKMENTE me dio el mapa y las herramientas. En 3 meses, dejé mi trabajo y ahora vivo 100% de mi negocio online. ¡La mejor inversión de mi vida!"</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full mr-4 bg-blue-200 flex items-center justify-center text-blue-800 font-bold text-sm">LV</div>
+                            <div>
+                                <p class="font-bold">Laura Vega</p>
+                                <p class="text-sm opacity-80">Diseñadora y Emprendedora</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white/20 p-6 rounded-lg text-left backdrop-blur-sm">
+                        <p class="mb-4">"Como profesional, quería diversificar mis ingresos. Con el derecho de reventa recuperé la inversión en una semana. Y lo que aprendí sobre marketing me ha ayudado a conseguir más clientes en mi sector."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full mr-4 bg-blue-200 flex items-center justify-center text-blue-800 font-bold text-sm">CM</div>
+                            <div>
+                                <p class="font-bold">Carlos Mendoza</p>
+                                <p class="text-sm opacity-80">Consultor Financiero</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- For Whom Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-900">¿Es PACKMENTE para Ti?</h2>
+                <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Si te identificas con alguna de estas situaciones, la respuesta es un rotundo SÍ.</p>
+                <div class="mt-8 text-left grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-2xl flex-shrink-0">✓</span>
+                        <p><strong>Emprendedores ambiciosos</strong> que quieren lanzar o escalar su negocio digital.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-2xl flex-shrink-0">✓</span>
+                        <p><strong>Profesionales</strong> que buscan una fuente de ingresos extra sólida y escalable.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-2xl flex-shrink-0">✓</span>
+                        <p><strong>Estudiantes</strong> que quieren aprender habilidades del futuro que no se enseñan en la universidad.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-blue-500 mr-3 text-2xl flex-shrink-0">✓</span>
+                        <p>Cualquier persona <strong>decidida a crear su libertad financiera</strong> en el mundo digital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Pricing Section -->
-        <section id="precio" class="bg-gray-100 py-20 px-4">
-            <div class="max-w-2xl mx-auto text-center">
-                 <h2 class="text-4xl font-bold text-gray-900">Tu Inversión para un Futuro sin Límites</h2>
-                 <p class="text-lg text-gray-600 mt-4">Accede a un arsenal valorado en más de $5,000 USD por un único pago.</p>
-                 <div class="bg-white rounded-2xl shadow-2xl p-10 my-10 transform hover:scale-105 transition-transform duration-300">
-                    <p class="text-xl font-semibold text-gray-500 line-through">Precio Original: $99</p>
-                    <p class="text-6xl font-black text-blue-600 my-4">$37</p>
-                    <p class="font-bold text-2xl mb-6">UN ÚNICO PAGO DE POR VIDA</p>
-                    <a href="#" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full text-xl inline-block w-full">
-                        ¡SÍ, QUIERO ACCESO TOTAL AHORA! 💎
-                    </a>
-                    <p class="mt-4 text-sm text-gray-500">Garantía de satisfacción de 7 días. Si no es para ti, te devolvemos tu dinero.</p>
-                 </div>
-            </div>
-        </section>
+        <!-- Pricing Section -->
+        <section id="precio" class="bg-gray-100 py-20 px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-gray-900">Tu Inversión para un Futuro sin Límites</h2>
+                <p class="text-lg text-gray-600 mt-4">Accede a un arsenal valorado en más de $5,000 USD por un único pago.</p>
+                <div class="bg-white rounded-2xl shadow-2xl p-10 my-10 transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-xl font-semibold text-gray-500 line-through">Precio Original: $99</p>
+                    <p class="text-6xl font-black text-blue-600 my-4">$37</p>
+                    <p class="font-bold text-2xl mb-6">UN ÚNICO PAGO DE POR VIDA</p>
+                    <a href="#contacto" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full text-xl w-full block">
+                        ¡SÍ, QUIERO ACCESO TOTAL AHORA! 💎
+                    </a>
+                    <p class="mt-4 text-sm text-gray-500">Garantía de satisfacción de 7 días. Si no es para ti, te devolvemos tu dinero.</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- FAQ Section -->
-        <section class="py-20 px-4">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-                <div class="space-y-4">
-                    <!-- FAQ Item -->
-                    <div>
-                        <h3 class="font-bold text-lg border-b pb-2">¿Necesito experiencia previa?</h3>
-                        <p class="pt-2 text-gray-600">Absolutamente no. PACKMENTE está diseñado para llevarte desde cero. Empezamos con las bases del emprendimiento y te guiamos paso a paso hasta los conceptos más avanzados.</p>
-                    </div>
-                     <!-- FAQ Item -->
-                    <div>
-                        <h3 class="font-bold text-lg border-b pb-2">¿En cuánto tiempo veré resultados?</h3>
-                        <p class="pt-2 text-gray-600">Depende de tu dedicación. Algunos estudiantes recuperan su inversión en la primera semana con el derecho de reventa. Otros, construyendo su propio negocio, pueden tardar entre 1 y 3 meses en generar sus primeros ingresos sólidos si aplican lo aprendido.</p>
-                    </div>
-                     <!-- FAQ Item -->
-                    <div>
-                        <h3 class="font-bold text-lg border-b pb-2">¿El acceso realmente es de por vida?</h3>
-                        <p class="pt-2 text-gray-600">Sí. 100% garantizado. Haces un único pago y tienes acceso para siempre a todos los cursos actuales, las herramientas, los productos y todas las futuras actualizaciones sin coste adicional.</p>
-                    </div>
-                     <!-- FAQ Item -->
-                    <div>
-                        <h3 class="font-bold text-lg border-b pb-2">¿Qué es exactamente el "derecho de reventa"?</h3>
-                        <p class="pt-2 text-gray-600">Significa que obtienes una licencia para vender el propio PACKMENTE a otras personas y quedarte con el 100% de la comisión. Es la forma más rápida de capitalizarte mientras aprendes y construyes tu propio negocio a largo plazo.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- FAQ Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+                <div class="space-y-4">
+                    <!-- FAQ Item -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3 class="font-bold text-lg">¿Necesito experiencia previa?</h3>
+                            <span class="faq-icon text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutamente no. PACKMENTE está diseñado para llevarte desde cero. Empezamos con las bases del emprendimiento y te guiamos paso a paso hasta los conceptos más avanzados.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3 class="font-bold text-lg">¿En cuánto tiempo veré resultados?</h3>
+                            <span class="faq-icon text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Depende de tu dedicación. Algunos estudiantes recuperan su inversión en la primera semana con el derecho de reventa. Otros, construyendo su propio negocio, pueden tardar entre 1 y 3 meses en generar sus primeros ingresos sólidos si aplican lo aprendido.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3 class="font-bold text-lg">¿El acceso realmente es de por vida?</h3>
+                            <span class="faq-icon text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí. 100% garantizado. Haces un único pago y tienes acceso para siempre a todos los cursos actuales, las herramientas, los productos y todas las futuras actualizaciones sin coste adicional.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item -->
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3 class="font-bold text-lg">¿Qué es exactamente el "derecho de reventa"?</h3>
+                            <span class="faq-icon text-2xl">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Significa que obtienes una licencia para vender el propio PACKMENTE a otras personas y quedarte con el 100% de la comisión. Es la forma más rápida de capitalizarte mientras aprendes y construyes tu propio negocio a largo plazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </main>
+        <!-- Contact Section -->
+        <section id="contacto" class="gradient-bg text-white py-20 px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">¿Listo para Transformar tu Vida?</h2>
+                <p class="text-lg mb-8">No esperes más. Tu futuro financiero comienza hoy.</p>
+                <a href="mailto:info@packmente.com" class="cta-button bg-yellow-400 text-gray-900 font-bold py-4 px-10 rounded-full text-xl">
+                    CONTACTAR AHORA 📧
+                </a>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-8 px-4">
-        <p>&copy; 2025 PACKMENTE. Todos los derechos reservados.</p>
-        <p class="text-sm opacity-70 mt-2">Transformando mentes, creando emprendedores.</p>
-    </footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <p>&copy; 2025 PACKMENTE. Todos los derechos reservados.</p>
+            <p class="text-sm opacity-70 mt-2">Transformando mentes, creando emprendedores.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-icon').textContent = '+';
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+                element.querySelector('.faq-icon').textContent = '-';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 
 </body>
 </html>
-
